@@ -2,6 +2,9 @@ instructors:
   - name: Yaoyu Tao
     profile_pic: /_images/pp/taoyaoyu.jpg
     webpage: https://taoyaoyu.github.io/
+  - name: Meng Li
+    profile_pic: /_images/pp/limeng.jpg
+    webpage: https://mengli.me
 
 teaching_assistants:
   - name: Zhe Zhan
