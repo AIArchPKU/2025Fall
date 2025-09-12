@@ -3,8 +3,8 @@ layout: home
 ---
 你可以通过此课程网站获取需要的课程资料。
 
-**Course Time**: TBA
+**Course Time**: 周五 15:10 - 17:00
 
-**Course Location**: TBA
+**Course Location**: 二教 414
 
-**Office Hour**: TBA
+**Office Hour**: Request advance by email
