@@ -5,6 +5,6 @@ layout: home
 
 **Course Time**: 周五 15:10 - 17:00
 
-**Course Location**: 二教 414
+**Course Location**: 二教 422
 
 **Office Hour**: Request advance by email
