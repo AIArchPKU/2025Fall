@@ -3,6 +3,13 @@ layout: page
 title: Lab1 1D Winograd
 ---
 
+## Update
+
+(点击跳转到对应位置)
+
+- 2025-10-22: [优化任务3说明，增加流水线后运行 Testbench 的提示](#update-1022)
+
+
 ## 实验目的
 
 1. 理解并实现1D Winograd卷积计算单元的设计。
@@ -180,6 +187,29 @@ title: Lab1 1D Winograd
 2. **引入流水线**：进入 `winograd_pipeline` 目录，该目录下的文件结构与 `winograd_comb` 目录类似，区别在于 `src` 目录下的 `winograd_1d.v` 文件中你需要补充流水线的相关代码。这里你需要将任务1中完成的`input_transform.v`、`weight_transform.v`、`output_transform.v` 复制到 `winograd_pipeline/src/` 目录下，并在 `winograd_1d.v` 中实例化这些模块。具体如何完成可以参考 `winograd_1d.v` 文件中的提示。
 
 3. **验证功能**：进入 `winograd_pipeline/run` 目录，运行 `make rerun` 或 `make all` 来验证功能，确保你的设计与任务1中的设计功能一致。
+
+
+    <div style="border: 1px solid gray; padding: 10px; margin: 10px" id="update-1022" markdown="1">
+
+    (10.22 Updated)
+
+    <!-- <a id="update-1022"></a> -->
+
+    此处需要注意的是，由于引入了流水线，输出结果会有一定的延迟。因此在输入数据后，需要等待足够的时钟周期，才能看到正确的输出结果。Testbench 你需要根据你设计的流水线延迟，修改 `winograd_1d_tb.v` 文件中的等待 tick 数量，确保能够正确捕获输出结果。代码示例如下：
+
+    ```verilog
+// Case 0
+#15 en = 1;
+r1_x = -32'sd10; r2_x = 32'sd20;
+r3_x = -32'sd30; r4_x = 32'sd40;
+r1_w = 32'sd2; r2_w = 32'sd3; r3_w = -32'sd4;
+calc_expected_results(r1_x, r2_x, r3_x, r4_x, r1_w, r2_w, r3_w, expected_r1_res[0], expected_r2_res[0]);
+#10 compare_results(0,expected_r1_res[0], expected_r2_res[0], r1_res, r2_res);
+    ```
+
+    `compare_results` 前的 `#10` 表示等待10个 tick，你需要根据你的流水线设计，调整这个等待时间，确保能够正确捕获输出结果。（默认的时钟周期是 10 ticks）
+    </div>
+
 
 4. **综合并验证时序**：进入 `winograd_pipeline/dc` 目录，运行 `make dc` 进行综合，综合完成后，你可以在 `rpts` 目录下查看综合报告，重点关注 `winograd_1d.timing.max.rpt` 文件，确保时序约束被满足。此时你应该会看到 `slack` 为正值，表示时序约束被满足。
 
