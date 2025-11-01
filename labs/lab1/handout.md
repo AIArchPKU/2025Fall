@@ -8,7 +8,26 @@ title: Lab1 1D Winograd
 (点击跳转到对应位置)
 
 - 2025-10-22: [优化任务3说明，增加流水线后运行 Testbench 的提示](#update-1022)
+- 2025-11-01: 增加实验环境问题的[Troubleshooting](#troubleshooting)部分
 
+
+## Troubleshooting
+
+如果在实验中遇到 `vcs:Command not found`, `dc_shell:Command not found` 等类似错误（多发生在机房停电后），你可以尝试运行以下命令修复：
+
+1. 尝试重启机器：
+
+```bash
+sudo reboot
+```
+2. 如果重启无效，尝试重新加载环境变量：
+
+```bash
+sudo systemctl start eda-*.service
+source ~/.bashrc
+```
+
+如果仍然无法解决问题，请联系助教寻求帮助。
 
 ## 实验目的
 
