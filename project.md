@@ -19,3 +19,15 @@ permalink: /project/
 **实验详情**： [Lab1 1D Winograd](/2025Fall/labs/lab1/handout.html)
 
 **实验报告及代码提交截止日期**：2025年11月10日23:59
+
+# Lab 2
+
+在本次实验中，你将完成一个 5 Stage 的 MIPS 流水线 CPU，主题代码已经提供，你需要补全少量代码以实现指令的正确执行
+
+**实验详情**： [Lab2 5-Stage Pipelined MIPS CPU](/2025Fall/labs/lab2/handout.html)
+
+参考资料:
+ - [MIPS Instruction Formats](static_files/Lab/Lab2/Instruction_Formats.pdf)
+ - [MIPS Instruction Descriptions](static_files/Lab/Lab2/Instruction_Descriptions_Short.pdf) ([Detailed version](static_files/Lab/Lab2/Instruction_Descriptions_Long.pdf))
+
+**实验报告及代码提交截止日期**：2025年12月10日23:59
