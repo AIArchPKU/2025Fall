@@ -6,7 +6,7 @@ pdf: /static_files/Assignments/Assignment1/Assignment1.pdf
 # solutions: /static_files/Assignments/Assignment1/Solution1.pdf
 # attachment: /static_files/assignments/asg.zip
 
-hide_from_announcments: false
+hide_from_announcments: true
 due_event: 
     type: due
     date: 2025-11-07T23:59:59
